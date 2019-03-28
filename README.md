@@ -1,2 +1,4 @@
 # enveloop
-Various utility for handling loops, recursions, etc.
+Various utilities for handling loops, recursions, etc.
+
+For now just an idea waiting to be made.
