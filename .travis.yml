@@ -1,0 +1,19 @@
+dist: xenial
+language: python
+python: 3.7
+install:
+  - pip install .
+  - pip install -r requirements.txt
+script:
+  - pytest -vvv
+
+deploy:
+  skip_cleanup: true
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: "arrrlo"
+  password:
+    secure: "C8dKd+6SIcNd05NxkG29b9XScTmrZDwgnEMA869hb8kY/iT0IXkELLiZwztNwWO8pCJvk04vppd0UsV6NZeULuJ6SydEpfdyDaCYEXz+YY7geqZUnuS1eLuCZudILHsbQWD7AxIWqh7doTUt+/dZt4NDy30ZPxUHsDX6tajWKHHlAiBj/287so+2xwJHkuqFPOXCYpMH6jL5+lIr2ryTsJiWE1q9SHmXbK7ukPMJ8dL8mKYSpToX9sB9HJz71qRhGgnBLxLuJwFK0UDyvsIN3EetSQMAqxhq98bDfPyKvvHvy1J99G0PDo06ksWQ9N3VhXN4U245SO+16YZgZnO4lVkjiF7JGKU2v9bSRQJtM9oJzLW0TuBecIEK1Lld09h4KH+B8Torj1iHswfcoWQKF1WiO2qSrc0wApY03Ej46QhKF9MUG7Er3SvctNFFaJg/2+X/NrHu4lpKVu/OKlLVIqw+mbiWo1YnyaUTavmmLFNHrVRCdGPhi8m5qQKoyw0i68vfZ1eGzF2GpH8W9xPQ0Hs/wvpcsHGEEfPPbzTahgDEdQcXmehLn0ZcGbEBI5ruSzFKPBexA0oeT2eTJNfi3FftlMqvpZZvQMlPHoTthpQc//iRxepkDBD/TBBqlqx8hQAkljkIEJVgO+lFURhorgXdDosnFfqVPFfoZqhfYf4="
+  skip_existing: true
+  on:
+    branch: master
