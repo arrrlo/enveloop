@@ -15,10 +15,21 @@ Let's say you wrote a recursive function and you want to limit number of recursi
 from enveloop import limit_recursion_to
 
 
+# let's limit the number of recursion to 100
+
+@limit_recursion_to(100)
+def my_func(arg):
+    ...
+    my_func(arg)
+    ...
+
+
 # let's limit the number of recursion and after 
-# the 10th recursion run a callback function
-@limit_recursion_to(number_of_loops=10,
-                    callback=lambda arg: ...)
+# the 10th recursion run a callback function.
+# callback function takes exactly the same arguments
+# as the recursion function.
+
+@limit_recursion_to(10, lambda arg: ...)
 def my_func(arg):
     ...
     my_func(arg)
